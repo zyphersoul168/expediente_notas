@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script
+      type="text/javascript"
+      async=""
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/recaptcha__en.js"
+      crossorigin="anonymous"
+      integrity="sha384-o1nfdUm9cV7Sx6HxXDsnady1EGmCBTwza/JTA6OSowyOK+wq0YF0+F9jejHVacaR"
+    ></script>
+    <script
+      async=""
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/analytics.js"
+    ></script>
+    <title>Expediente en Línea | Expediente en Línea :: Notas</title>
+
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta
+      name="description"
+      content="Universidad de El Salvador, Inscripción en Línea"
+    />
+    <meta name="author" content="Departamento de IT - UES 2016" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/expediente-gris.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/menu.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/jquery.growl.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/jquery-ui.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/jquery-1.12.3.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/validator.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/jquery-ui.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/jquery.mask.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/jquery.growl.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/customTasks.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/helper"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/utils.js"
+    ></script>
+  </head>
+  <body id="global-container">
+    <nav class="navbar navbar-expediente-gris navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Alternar navegación</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="" href="https://eel.ues.edu.sv/"
+            ><img
+              src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/minerva-sf.png"
+              title="Minerva UES"
+              alt="UES"
+              width="48px"
+          /></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul id="menu" class="nav navbar-nav pull-left">
+            <li>
+              <a href="https://eel.ues.edu.sv/index/"
+                ><span class="fa fa-home" style="padding-right: 3px"></span
+                >Inicio</a
+              >
+            </li>
+            <li>
+              <a href="https://eel.ues.edu.sv/inscripcion/index"
+                ><span class="" style="padding-right: 3px"></span>Inscripción</a
+              >
+            </li>
+            <li>
+              <a href="https://eel.ues.edu.sv/expediente/index"
+                ><span class="" style="padding-right: 3px"></span>Expediente</a
+              >
+            </li>
+            <li>
+              <a href="https://eel.ues.edu.sv/pagos/index"
+                ><span class="" style="padding-right: 3px"></span>Pagos</a
+              >
+            </li>
+            <li>
+              <a href="https://eel.ues.edu.sv/eda/index"
+                ><span class="" style="padding-right: 3px"></span>Encuestas</a
+              >
+            </li>
+            <li>
+              <a href="https://eel.ues.edu.sv/clase/index"
+                ><span class="" style="padding-right: 3px"></span>Campus</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://eel.ues.edu.sv/procesos/index"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                ><span class="" style="padding-right: 3px"></span>Procesos
+                <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                  <a
+                    href="https://eel.ues.edu.sv/procesos/index"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    ><span class="" style="padding-right: 3px"></span>Procesos
+                    Académicos</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="https://eel.ues.edu.sv/solicitud/activacion"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Activacion</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://eel.ues.edu.sv/diferido/index"
+                        ><span class="" style="padding-right: 3px"></span>Examen
+                        Diferido</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://eel.ues.edu.sv/graduacion/index"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Expediente de Graduación</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/solicitudgeneral/solGeneral"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Generales</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a
+                    href="https://eel.ues.edu.sv/procesos/index"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    ><span class="" style="padding-right: 3px"></span>Cambios de
+                    Carrera y Traslados</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="https://eel.ues.edu.sv/cambiocarrera/index"
+                        ><span class="" style="padding-right: 3px"></span>Cambio
+                        de Carrera</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://eel.ues.edu.sv/traslado/index"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Traslado de Sede</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a
+                    href="https://eel.ues.edu.sv/procesos/index"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    ><span class="" style="padding-right: 3px"></span>Retiro de
+                    asignaturas</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="https://eel.ues.edu.sv/retiro/index"
+                        ><span class="" style="padding-right: 3px"></span>Retiro
+                        de Unidades de Aprendizaje (Asignaturas)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/accionesacademicas/retiroEx/"
+                        ><span class="" style="padding-right: 3px"></span>Retiro
+                        Extraordinario de Unidades de Aprendizaje
+                        (Asignaturas)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/accionesacademicas/retiroEs/"
+                        ><span class="" style="padding-right: 3px"></span>Retiro
+                        Especial de Unidades de Aprendizaje (TODAS las
+                        Asignaturas)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/accionesacademicas/retiroOfi/"
+                        ><span class="" style="padding-right: 3px"></span>Retiro
+                        OFICIAL de ciclo</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a
+                    href="https://eel.ues.edu.sv/dropdown-submenu/index"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    ><span class="" style="padding-right: 3px"></span
+                    >Socioeconomico</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="https://eel.ues.edu.sv/uese/index"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Beca Remunerada</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/socioeconomico/revisionCuota/"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Revisión de Cuota</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/socioeconomico/cuotaFamiliar/"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Exoneración por Cuota Familiar</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/socioeconomico/situacionEconomica/"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Exoneración por Situación Económica</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/socioeconomico/primerosLugares/"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Exoneración por Primeros Lugares</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://eel.ues.edu.sv/socioeconomico/pasantiaremunerada/"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Pasantía Remunerada</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://eel.ues.edu.sv/socioeconomico/becaReRnv/"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Renovación de Beca</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://eel.ues.edu.sv/socioeconomico/reconBeca/"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Solicitud de Reconsideración de Beca Remunerada</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://eel.ues.edu.sv/asignacioncuota/index"
+                        ><span class="" style="padding-right: 3px"></span
+                        >Proceso de Asignación de Cuota</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://eel.ues.edu.sv/procesoAcademico/index"
+                    ><span class="" style="padding-right: 3px"></span>Mis
+                    procesos</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul id="menu" class="nav navbar-nav pull-right">
+            <li>
+              <a href="https://eel.ues.edu.sv/perfil/index"
+                ><span class="fa fa-user" style="padding-right: 3px"></span
+                >Perfil</a
+              >
+            </li>
+            <li>
+              <a href="https://eel.ues.edu.sv/session/end/"
+                ><span class="fa fa-power-off" style="padding-right: 3px"></span
+                >Salir</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li>
+          <a href="https://eel.ues.edu.sv/expediente/index">Record de Notas</a>
+        </li>
+        <li></li>
+        <li>
+          <a href="https://eel.ues.edu.sv/notas/index">Notas Parciales</a>
+        </li>
+        <li></li>
+        <li><a href="https://eel.ues.edu.sv/pensum/index">Mi Pensum</a></li>
+        <li></li>
+        <li>
+          <a href="https://eel.ues.edu.sv/evaluacion/index">Evaluaciones</a>
+        </li>
+        <li></li>
+        <li>
+          <a href="https://eel.ues.edu.sv/proximociclo/oferta"
+            >Materias de próximo ciclo</a
+          >
+        </li>
+        <li></li>
+        <li>
+          <a href="https://eel.ues.edu.sv/biblioteca/index">Biblioteca</a>
+        </li>
+        <li></li>
+        <li>
+          <a href="https://eel.ues.edu.sv/social/index">Servicio Social</a>
+        </li>
+        <li></li>
+      </ul>
+      <div style="clear: both; padding-bottom: 15px"></div>
+
+      <div style="width: 19%; float: left; padding-right: 0px">
+        <div class="list-group" style="padding-bottom: 25px">
+          <a
+            href="https://eel.ues.edu.sv/notas/index/"
+            class="list-group-item active"
+            >Carreras</a
+          ><a
+            href="https://eel.ues.edu.sv/notas/index/112"
+            class="list-group-item"
+            >Ingeniería Química (I10506-1998)</a
+          >
+        </div>
+        <div class="list-group" style="padding-bottom: 25px">
+          <a
+            href="https://eel.ues.edu.sv/notas/notasCiclo/"
+            class="list-group-item active"
+            >Notas según Ciclo</a
+          ><a
+            href="https://eel.ues.edu.sv/notas/notasCiclo/2981/40"
+            class="list-group-item"
+            >III-2022</a
+          >
+        </div>
+      </div>
+
+      <div id="contenido-derecha" style="width: 80%; float: right">
+        <script
+          type="text/javascript"
+          src="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/jQuery.print.js"
+        ></script>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="Expediente%20en%20L%C3%ADnea%20Expediente%20en%20L%C3%ADnea%20Notas_files/normalize.min.css"
+        />
+
+        <style>
+          .nota-reportada {
+            color: #616161;
+            font-size: 0.8em;
+            display: none;
+          }
+        </style>
+
+        <div class="form-actions right">
+          <h3>
+            <span
+              id="mostrar-fechas"
+              class="fa fa-calendar-check-o puntero text-info large"
+              style="margin-right: 1em"
+              onclick="mostrarFechasEvaluacionesReportadas()"
+              title="Ver fechas"
+            ></span>
+            <span
+              id="ocultar-fechas"
+              class="fa fa-calendar-times-o puntero text-info large"
+              style="margin-right: 1em; display: none"
+              onclick="ocultarFechasEvaluacionesReportadas()"
+              title="Ocultar fechas"
+            ></span>
+            <span
+              class="fa fa-print puntero text-info large"
+              onclick="$('#notas-parciales-plan-estudio').print()"
+              title="Imprimir Record de Notas"
+            ></span>
+          </h3>
+          <h3></h3>
+        </div>
+
+        <div id="notas-parciales-plan-estudio">
+          <div style="text-align: center; padding-bottom: 10px">
+            <strong>
+              <div>UNIVERSIDAD DE EL SALVADOR</div>
+              <div>ADMINISTRACIÓN ACADÉMICA</div>
+            </strong>
+            <div>Notas Parciales Ciclo III - 2022</div>
+          </div>
+
+          <!-- <div class="right">Fecha : 30/06/2022 23:28:31</div> -->
+
+          <div id="expediente-alumno-detalle-alumno">
+            <table class="table table-bordered table-striped" align="center">
+              <tbody>
+                <tr>
+                  <th>Carnet</th>
+                  <th>Apellidos</th>
+                  <th>Nombres</th>
+                  <th>Sexo</th>
+                </tr>
+                <tr>
+                  <td>OC21015</td>
+                  <td>Ortiz Cristo</td>
+                  <td>Aarón Eduardo</td>
+                  <td>Hombre</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="expediente-alumno-datos">
+            <table class="table table-bordered table-striped" align="center">
+              <tbody>
+                <tr>
+                  <th class="center">Codigo</th>
+                  <th>Carrera</th>
+                  <th class="center">Plan</th>
+                  <th>Estado</th>
+                </tr>
+                <tr>
+                  <td class="center">I10506</td>
+                  <td>Ingeniería Química</td>
+                  <td class="center">1998</td>
+                  <td>Estudiante</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <table
+            class="table table-bordered table-striped small"
+            align="center"
+          >
+            <thead>
+              <tr>
+                <th class="center">Código</th>
+                <th class="center">Matricula</th>
+                <th class="center">Grupo</th>
+                <th>Materia</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>Nota</th>
+                <th>Suf</th>
+                <th>Nota ciclo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Imprimo porcentajes -->
+              <tr>
+                <td rowspan="2" class="center">QUR215</td>
+                <td rowspan="2" class="center">1</td>
+                <td rowspan="2" class="center">T - 1</td>
+                <td rowspan="2">Química General II</td>
+
+                <td><strong>20.00%</strong></td>
+
+                <td><strong>20.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>30.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <!-- Imprimo notas -->
+              <tr>
+                <td>
+                  <span
+                    title="													13/06/2022 12:16:02                                     			"
+                  >
+                    9.50
+                    <span class="nota-reportada"
+                      ><br />13/06/2022 12:16:02</span
+                    >
+                  </span>
+                </td>
+
+                <td>
+                  <span
+                    title="													14/06/2022 14:56:39                                     			"
+                  >
+                    8.25
+                    <span class="nota-reportada"
+                      ><br />14/06/2022 14:56:39</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													21/06/2022 16:07:10                                     			"
+                  >
+                    9.00
+                    <span class="nota-reportada"
+                      ><br />21/06/2022 16:07:10</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													22/06/2022 11:02:39                                     			"
+                  >
+                    8.90
+                    <span class="nota-reportada"
+                      ><br />22/06/2022 11:02:39</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													22/06/2022 16:50:21                                     			"
+                  >
+                    9.00
+                    <span class="nota-reportada"
+                      ><br />22/06/2022 16:50:21</span
+                    >
+                  </span>
+                </td>
+
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+
+                <td>8.9</td>
+                <td></td>
+                <td><strong>8.9</strong></td>
+              </tr>
+              <!-- Imprimo porcentajes -->
+              <tr>
+                <td rowspan="2" class="center">FIR215</td>
+                <td rowspan="2" class="center">1</td>
+                <td rowspan="2" class="center">T - 2</td>
+                <td rowspan="2">Física II</td>
+
+                <td><strong>20.00%</strong></td>
+
+                <td><strong>20.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <!-- Imprimo notas -->
+              <tr>
+                <td>
+                  <span
+                    title="													24/03/2022 14:55:09                                     			"
+                  >
+                    9.50
+                    <span class="nota-reportada"
+                      ><br />24/03/2022 14:55:09</span
+                    >
+                  </span>
+                </td>
+
+                <td>
+                  <span
+                    title="													28/06/2022 17:01:02                                     			"
+                  >
+                    9.78
+                    <span class="nota-reportada"
+                      ><br />28/06/2022 17:01:02</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													20/05/2022 15:42:09                                     			"
+                  >
+                    6.20
+                    <span class="nota-reportada"
+                      ><br />20/05/2022 15:42:09</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													28/06/2022 17:01:02                                     			"
+                  >
+                    9.48
+                    <span class="nota-reportada"
+                      ><br />28/06/2022 17:01:02</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													28/06/2022 17:01:02                                     			"
+                  >
+                    9.64
+                    <span class="nota-reportada"
+                      ><br />28/06/2022 17:01:02</span
+                    >
+                  </span>
+                </td>
+
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+
+                <td>8.9</td>
+                <td></td>
+                <td><strong>8.9</strong></td>
+              </tr>
+              <!-- Imprimo porcentajes -->
+              <tr>
+                <td rowspan="2" class="center">FDE115</td>
+                <td rowspan="2" class="center">1</td>
+                <td rowspan="2" class="center">T - 1</td>
+                <td rowspan="2">Fundamentos de la economía</td>
+
+                <td><strong>20.00%</strong></td>
+
+                <td><strong>20.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>15.00%</strong></td>
+                <td><strong>15.00%</strong></td>
+
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <!-- Imprimo notas -->
+              <tr>
+                <td>
+                  <span
+                    title="													26/06/2022 12:25:41                                     			"
+                  >
+                    8.80
+                    <span class="nota-reportada"
+                      ><br />26/06/2022 12:25:41</span
+                    >
+                  </span>
+                </td>
+
+                <td>
+                  <span
+                    title="													26/06/2022 12:25:41                                     			"
+                  >
+                    9.00
+                    <span class="nota-reportada"
+                      ><br />26/06/2022 12:25:41</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													26/06/2022 12:25:41                                     			"
+                  >
+                    9.00
+                    <span class="nota-reportada"
+                      ><br />26/06/2022 12:25:41</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													26/06/2022 12:25:41                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />26/06/2022 12:25:41</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													26/06/2022 12:25:41                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />26/06/2022 12:25:41</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													26/06/2022 12:25:41                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />26/06/2022 12:25:41</span
+                    >
+                  </span>
+                </td>
+
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+
+                <td>9.4</td>
+                <td></td>
+                <td><strong>9.4</strong></td>
+              </tr>
+              <!-- Imprimo porcentajes -->
+              <tr>
+                <td rowspan="2" class="center">PYE115</td>
+                <td rowspan="2" class="center">1</td>
+                <td rowspan="2" class="center">T - 1</td>
+                <td rowspan="2">Probabilidad y Estadística</td>
+
+                <td><strong>3.33%</strong></td>
+
+                <td><strong>3.33%</strong></td>
+                <td><strong>3.34%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+
+                <td>--</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <!-- Imprimo notas -->
+              <tr>
+                <td>
+                  <span
+                    title="													23/06/2022 12:02:25                                     			"
+                  >
+                    9.00
+                    <span class="nota-reportada"
+                      ><br />23/06/2022 12:02:25</span
+                    >
+                  </span>
+                </td>
+
+                <td>
+                  <span
+                    title="													27/06/2022 11:08:54                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />27/06/2022 11:08:54</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													27/06/2022 11:08:54                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />27/06/2022 11:08:54</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													23/06/2022 12:02:25                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />23/06/2022 12:02:25</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													23/06/2022 12:02:25                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />23/06/2022 12:02:25</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													23/06/2022 12:02:25                                     			"
+                  >
+                    10.00
+                    <span class="nota-reportada"
+                      ><br />23/06/2022 12:02:25</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													23/06/2022 12:02:25                                     			"
+                  >
+                    9.00
+                    <span class="nota-reportada"
+                      ><br />23/06/2022 12:02:25</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													23/06/2022 12:02:25                                     			"
+                  >
+                    8.50
+                    <span class="nota-reportada"
+                      ><br />23/06/2022 12:02:25</span
+                    >
+                  </span>
+                </td>
+                <td>
+                  <span
+                    title="													23/06/2022 12:02:25                                     			"
+                  >
+                    8.40
+                    <span class="nota-reportada"
+                      ><br />23/06/2022 12:02:25</span
+                    >
+                  </span>
+                </td>
+
+                <td>--</td>
+
+                <td>9.1</td>
+                <td></td>
+                <td><strong>9.1</strong></td>
+              </tr>
+              <!-- Imprimo porcentajes -->
+              <tr>
+                <td rowspan="2" class="center">MAT315</td>
+                <td rowspan="2" class="center">1</td>
+                <td rowspan="2" class="center">T - 1</td>
+                <td rowspan="2">Matemática III</td>
+
+                <td><strong>10.00%</strong></td>
+
+                <td><strong>10.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+                <td><strong>20.00%</strong></td>
+                <td><strong>10.00%</strong></td>
+
+                <td>--</td>
+                <td>--</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <!-- Imprimo notas -->
+              <tr>
+                <td>
+                  <span title=""> </span>
+                </td>
+
+                <td>
+                  <span title=""> </span>
+                </td>
+                <td>
+                  <span title=""> </span>
+                </td>
+                <td>
+                  <span title=""> </span>
+                </td>
+                <td>
+                  <span title=""> </span>
+                </td>
+                <td>
+                  <span title=""> </span>
+                </td>
+                <td>
+                  <span title=""> </span>
+                </td>
+                <td>
+                  <span title=""> </span>
+                </td>
+
+                <td>--</td>
+                <td>--</td>
+
+                <td>0.0</td>
+                <td></td>
+                <td><strong>0.0</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <script>
+          function mostrarFechasEvaluacionesReportadas() {
+            $('.nota-reportada').show();
+            $('#mostrar-fechas').hide();
+            $('#ocultar-fechas').show();
+          }
+          function ocultarFechasEvaluacionesReportadas() {
+            $('.nota-reportada').hide();
+            $('#mostrar-fechas').show();
+            $('#ocultar-fechas').hide();
+          }
+        </script>
+      </div>
+
+      <div style="clear: both"></div>
+    </div>
+    <div class="push"></div>
+    <div>
+      <hr />
+      <footer>
+        <p style="padding-left: 25px">
+          <a href="http://dti.ues.edu.sv/">DTI</a> ©
+          <a href="http://www.ues.edu.sv/">Universidad de El Salvador</a> 2022
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      loadScript('https://www.google.com/recaptcha/api.js');
+      setTimeout(loadGoogleAnalytics, 1000);
+    </script>
+  </body>
+</html>

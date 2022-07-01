@@ -1,0 +1,399 @@
+/*
+ * Carga contenedor via ajax.
+ * @url string
+ * @box string
+ */
+function Cargar(url, contenedor, accion) {
+    if (typeof accion == 'undefined') {
+        accion = function () {
+        };
+    }
+
+    $.ajax({
+        url: url,
+        success: function (data) {
+            $('#' + contenedor).html(data);
+            accion();
+        },
+        fail: function (xhr, status, error) {
+            $('#' + contenedor).html('');
+        }
+    });
+}
+
+/*
+ * Carga contenido via ajax.
+ * @url string
+ * @box string
+ */
+function Go(url, accion) {
+    if (typeof accion == 'undefined') {
+        accion = function () {
+        };
+    }
+    $.ajax({
+        url: url,
+        success: function (data) {
+            $(this).html(data);
+            accion();
+        }
+    });
+}
+
+/*
+ * Procesa un Formulario HTML
+ * @url string
+ * @box string
+ * @idForm string
+ */
+function ajaxForm(contenedor, idForm, url) {
+    /*
+    if($('#'+idForm).valid())
+    {
+    */
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: $('#' + idForm).serialize(), // serializes the form's elements.
+        datatype: 'html',
+        success: function (data) {
+            $('#' + contenedor).html(data);
+        }
+
+    });
+    /*
+    }
+    else
+    {
+      return false;
+    }
+    */
+    $('#' + contenedor).html('<div style="text-align:center; padding:25px;"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Abriendo...</span></div>');
+    return false; // avoid to execute the actual submit of the form.
+}
+
+
+/*
+ * Procesa un formulario, previa confirmacion
+ * @formId string
+ * @box sttring
+ */
+function ajaxFormConfirm(box, idForm, title) {
+    $("#dialog-confirm").html(title);
+
+    // Define the Dialog and its properties.
+    $("#dialog-confirm").dialog({
+        resizable: false,
+        modal: true,
+        title: "Confirmar Acción",
+        height: 240,
+        width: 320,
+        buttons: {
+            "Aceptar": function () {
+                $(this).dialog('close');
+
+
+                $.ajax({
+                    url: $("#" + idForm).attr("action"),
+                    type: 'POST',
+                    data: $("#" + idForm).serialize(), // serializes the form's elements.
+                    datatype: 'html',
+                    success: function (data) {
+                        //Devuelvo los datos en un nuevo div
+                        $("#" + box).html(data);
+                    }
+                }); // Fin Ajax
+
+            },
+            "Cancelar": function () {
+                $(this).dialog('close');
+
+            }
+        }
+    });
+}
+
+
+/*
+ * Carga contenedor via ajax y confirma
+ * @url string
+ * @box string
+ */
+function Eliminar(url, contenedor, mensaje, action) {
+    if (typeof action == 'undefined') {
+        action = function () {
+
+        };
+    }
+
+    $("#dialog-confirm").html(mensaje);
+
+    // Define the Dialog and its properties.
+    $("#dialog-confirm").dialog({
+        resizable: false,
+        modal: true,
+        title: "Confirmar Acción",
+        height: 200,
+        width: 300,
+        buttons: {
+            "Aceptar": function () {
+                $(this).dialog('close');
+
+                $.ajax({
+                    url: url,
+                    success: function (data) {
+                        $('#' + contenedor).html('');
+                        action(data);
+                    }
+                });
+            },
+            "Cancelar": function () {
+                $(this).dialog('close');
+
+            }
+        }
+    });
+}
+
+
+/*
+ * Convierte un campo de texto en uno autocompletado
+ * a partir de informacion recuperada a traves de un url
+ * json
+ * @campo string
+ * @url sttring
+ */
+function AutocompletarAjax(campo, url) {
+    var campoAutocompleta = campo + "_autocompletar";
+
+    // Si el campo no existe lo creo.
+    if ($('#' + campoAutocompleta).length == 0) {
+        $("#" + campo).after($('<input type="hidden" id="' + campoAutocompleta + '" name="' + campoAutocompleta + '" value="" >'));
+    }
+
+    // Evaluo autocompletar
+    $("#" + campo).autocomplete({
+
+        // Obtengo los datos desde el webservice
+        source: function (request, response) {
+            $.ajax({
+                url: url,
+                dataType: "json",
+                data: {
+                    term: request.term
+                },
+                success: function (data) {
+                    response(data);
+                }
+            });
+        },
+        minLength: 3,
+
+        // Asigno valor al campo hidden creado
+        select: function (event, ui) {
+            $("#" + campoAutocompleta).val(ui.item.key);
+        }
+
+    });
+}
+
+/* Abre una nueva ventana con vista previa para impresion
+ * solo incluye el contenido central y no el resto del layout
+ * @url string opcional ya veremos...
+ * @nombreAplicacion string
+ */
+function Imprimir(nombreAplicacion) {
+    //recargando pagina actual
+    var w = window.open(document.URL);
+    $(w).load(function () {
+        w.$(".navbar").remove();
+        w.$(".nav").remove();
+        w.$(".no-imprimir").remove();
+        w.$("#menu-vertical-" + nombreAplicacion).remove();
+        w.$("footer").remove();
+        w.$("#contenido-" + nombreAplicacion).css("width", "100%");
+        w.print();
+        w.close();
+    });
+}
+
+/*
+ * Crea una ventana emergente
+ */
+function Ventana(url, w, h) {
+    if (h == '')
+        h = 600;
+    if (w == '')
+        w = 300;
+    window.open(url, '', 'width=' + w + ', height=' + h + ', scrollbars=yes, dependent=yes, menubar=yes');
+}
+
+/**
+ * Imprimir un documento desde la URL
+ * @param {text} url
+ * @returns {undefined}
+ */
+function printByURL(url) {
+    var screenLeft = 0, screenTop = 0, width = 0, height = 0;
+    if (!width) width = (screen.width * 0.5);
+    if (!height) height = (screen.height * 0.8);
+
+    if (typeof window.screenLeft !== 'undefined') {
+        screenLeft = window.screenLeft;
+        screenTop = window.screenTop;
+    } else if (typeof window.screenX !== 'undefined') {
+        screenLeft = window.screenX;
+        screenTop = window.screenY;
+    }
+    var features_dict = {
+        toolbar: 'no',
+        location: 'no',
+        directories: 'no',
+        copyhistory: 'no',
+        left: screenLeft + ($(window).width() - width) / 2,
+        top: screenTop + ($(window).height() - height) / 2,
+        status: 'yes',
+        menubar: 'no',
+        scrollbars: 'yes',
+        resizable: 'yes',
+        width: width,
+        height: height
+    };
+    var features_arr = [];
+    for (var k in features_dict) {
+        features_arr.push(k + '=' + features_dict[k]);
+    }
+    var features_str = features_arr.join(',');
+
+    var w = window.open(url, '', features_str);
+    return w;
+}
+
+/**
+ * Despliega un mensaje al usuario
+ */
+function mensajeDisplay(mensaje, tipo, titulo, size) {
+    titulo = titulo || "Mensaje";
+    tipo = tipo || "advertencia";
+    if (typeof size == 'undefined') {
+        size = "medium";
+
+    }
+    var estilo = "";
+    switch (tipo) {
+        case 'advertencia':
+            estilo = "warning";
+            break;
+        case 'error':
+            estilo = "error";
+            break;
+        case 'exito':
+            estilo = "notice";
+            break;
+        default:
+            estilo = "default";
+    }
+    $.growl({
+        title: titulo,
+        message: mensaje,
+        duration: 5000,
+        style: estilo,
+        location: "tr",
+        delayOnHover: true,
+        size: size
+    });
+
+}
+
+/**
+ * Sube un archivo por ajax
+ * @param {type} url
+ * @param {type} file
+ * @param {type} callback
+ * @returns {undefined}
+ */
+function uploadFile(url, file, callback) {
+    var datos = new FormData();
+    datos.append('archivo', file);
+    var xhrForm = new XMLHttpRequest();
+    xhrForm.onreadystatechange = function () {
+        if (xhrForm.readyState == 4 && xhrForm.status == 200) {
+            try {
+                var json = JSON.parse(xhrForm.responseText);
+                callback(json);
+            } catch (err) {
+                callback(xhrForm.responseText);
+            }
+
+        }
+    };
+    xhrForm.open('POST', url);
+    xhrForm.send(datos);
+}
+
+/*
+ * Procesa un Formulario HTML
+ * @url string
+ * @box string
+ * @idForm string
+ */
+function ajaxFormAction(idForm, url, action) {
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: $('#' + idForm).serialize(), // serializes the form's elements.
+        datatype: 'html',
+        success: function (data) {
+            action(data);
+        }
+
+    });
+}
+
+function printModalByURL(url, title) {
+    let modal = $('#printing_modal');
+    let html = `<iframe id="print" src="${url}" style="height:100%;width:100%;border:none;"></iframe>`;
+    modal.find('.modal-body').html(html);
+    modal.find('.modal-title').html(title);
+    modal.modal('show');
+}
+
+function printFrame(id) {
+    let frm = document.getElementById(id).contentWindow;
+    frm.focus();// focus on contentWindow is needed on some ie versions
+    frm.print();
+    return false;
+}
+
+function loadScript(url, timeout = 1000) {
+    setTimeout(_loadScript, timeout);
+
+    function _loadScript() {
+        $.ajax({
+            url: url,
+            cache: true,
+            dataType: "script",
+            success: function (data) {
+                console.log('got the script');
+            },
+            error: function () {
+                console.log('failed to get the script');
+            },
+            timeout: 5000
+        });
+    }
+}
+
+function loadGoogleAnalytics() {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-81272793-1', 'auto');
+    ga('send', 'pageview');
+    $('.dropdown-toggle').dropdown()
+}
+
+
+
